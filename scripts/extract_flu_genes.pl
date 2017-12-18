@@ -103,6 +103,7 @@ my %Gene = (
     'neuraminidase' => 1450
     );
 my $print_flag=0;
+my $seq = "";
 
 unless (exists $Gene{$gene}) {  die "\n Error: The --gene you select needs to be one of the genes available, not: $gene\n"; }
 
@@ -116,9 +117,13 @@ open(OUT,">$outfile") || die "\n Cannot write to $outfile\n";
 while(<IN>) {
     chomp;
     if ($_ =~ m/^>/) {
+	$print_flag = 0;
 	if ($_ =~ m/Influenza A/i) {
-	    
-	}
+	    if ($_ =~ m/$gene/) {
+		print OUT $_ . "\n";
+		$print_flag = 1;
+	    }
+	} 
     }
     elsif ($print_flag == 1) {
 	print OUT $_ . "\n";
