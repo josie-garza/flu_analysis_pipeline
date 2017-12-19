@@ -95,7 +95,7 @@ pod2usage(-verbose => 2)  if ($manual);
 pod2usage( {-exitval => 0, -verbose => 2, -output => \*STDERR} )  if ($help);
 pod2usage( -msg  => "\n\n ERROR!  Required argument --fasta not found.\n\n", -exitval => 2, -verbose => 1)  if (! $fasta );
 pod2usage( -msg  => "\n\n ERROR!  Required argument --gene not found.\n\n", -exitval => 2, -verbose => 1)  if (! $gene );
-pod2usage( -msg  => "\n\n ERROR!  Required argument -outfile not found.\n\n", -exitval => 2, -verbose => 1)  if (! $outfile);
+pod2usage( -msg  => "\n\n ERROR!  Required argument --out not found.\n\n", -exitval => 2, -verbose => 1)  if (! $outfile);
 
 ## Globals
 my %Gene = (
@@ -103,7 +103,7 @@ my %Gene = (
     'neuraminidase' => 1450
     );
 my $print_flag=0;
-my $seq = "";
+my ($header,$seq) = ("","");
 
 unless (exists $Gene{$gene}) {  die "\n Error: The --gene you select needs to be one of the genes available, not: $gene\n"; }
 
@@ -117,19 +117,28 @@ open(OUT,">$outfile") || die "\n Cannot write to $outfile\n";
 while(<IN>) {
     chomp;
     if ($_ =~ m/^>/) {
+	if ($print_flag == 1) {
+	    if (length($seq) >= $Gene{$gene}) { ## If the sequence is long enough
+		print OUT $header . "\n" . $seq . "\n";
+	    }
+	}
 	$print_flag = 0;
+	$seq = "";
 	if ($_ =~ m/Influenza A/i) {
 	    if ($_ =~ m/$gene/) {
-		print OUT $_ . "\n";
+		$header = $_;
 		$print_flag = 1;
 	    }
 	} 
     }
     elsif ($print_flag == 1) {
-	print OUT $_ . "\n";
+	$seq = $seq . $_;
     }
 }
 close(IN);
+if (length($seq) >=$Gene{$gene}) {## If the sequence is long enough
+    print OUT $header . "\n" . $seq . "\n";
+}
 close(OUT);
 
 exit 0;
