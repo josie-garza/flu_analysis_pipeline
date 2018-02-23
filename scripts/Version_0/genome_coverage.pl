@@ -73,7 +73,7 @@ use Pod::Usage;
 #ARGUMENTS WITH NO DEFAULT
 my($genome,$bam,$help,$manual);
 
-GetOptions (	
+GetOptions (
 				"g|genome=s"	=>	\$genome,
                                 "b|bam=s"       =>      \$bam,
 				"h|help"	=>	\$help,
