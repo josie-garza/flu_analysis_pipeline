@@ -13,17 +13,11 @@ for i in "${directories[@]}"; do
 done
 
 c=1
-while [ $c -le 5 ]
+while [ ${#c} -le 5 ]
 do
 	echo "Welcone $c times"
-	(( c++ ))
+        c="0$c"
 done
-
-# k=1
-# while ( ${#k} <= 5 )
-#         @ k = "0$k"
-#         echo $k
-# end
 
 # test=()
 # for k in {1..5}; do
