@@ -14,7 +14,7 @@ done
 
 test=()
 for k in {1..5}; do
-        test+=k
+        test+=$k
 done
 echo ${arr[@]}
 
