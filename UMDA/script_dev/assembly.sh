@@ -13,10 +13,11 @@ for i in "${directories[@]}"; do
 done
 
 c=1
-while ( $c <= 5 )
-	echo "Welcome $c times"
-	@ c = $c + 1
-end
+while [ $c -le 5 ]
+do
+	echo "Welcone $c times"
+	(( c++ ))
+done
 
 # k=1
 # while ( ${#k} <= 5 )
