@@ -6,6 +6,8 @@ REFERENCE="references/flu_ref"
 ## Create the working directories
 directories=(03-bowtie2)
 for i in "${directories[@]}"; do
+    if [ -d $i ]; then
+        rm -rf $i
     mkdir $i
 done
 
