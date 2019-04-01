@@ -11,3 +11,9 @@ directories=( 03-bowtie2)
 for i in "${directories[@]}"; do
     mkdir $i
 done
+
+## Step 03: Recruit reads to a Flu reference
+bowtie2 -x ${REFERENCE} \
+    -1 $WORKING/02-flash/$SAMPLE/out.notCombined_1.fastq \
+    -2 $WORKING/02-flash/$SAMPLE/out.notCombined_2.fastq \
+     2> $WORKING/03-bowtie2/$SAMPLE/bowtie2.log
