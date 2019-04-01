@@ -12,10 +12,12 @@ for i in "${directories[@]}"; do
         mkdir $i
 done
 
-samples=(00001 00002 00011 00012 00014 00015 00016 00017 00018 00019 00020 00021)
+samples=(00001
+00002)
 ## Step 03: Recruit reads to a Flu reference
 for j in "${samples[@]}"; do
     if [ -f /research/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
+            echo $j
             bowtie2 -x ${REFERENCE} \
             --quiet\
             -1  /research/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq\
