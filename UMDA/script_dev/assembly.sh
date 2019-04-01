@@ -20,4 +20,7 @@ for j in "${samples[@]}"; do
     --no-unal
     samtools view -Sb 03-bowtie2/$j.sam > 03-bowtie2/$j.bam
     samtools sort 03-bowtie2/$j.bam -o 03-bowtie2/$j.sorted.bam
+    samtools index 03-bowtie2/$j.sorted.bam
+    rm $j.sam
+    rm $j.bam
 done
