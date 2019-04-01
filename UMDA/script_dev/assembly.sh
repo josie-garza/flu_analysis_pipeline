@@ -12,7 +12,7 @@ for i in "${directories[@]}"; do
     mkdir $i
 done
 
-samples=(00002)
+samples=(00003)
 ## Step 03: Recruit reads to a Flu reference
 for j in "${samples[@]}"; do
     bowtie2 -x ${REFERENCE} \
