@@ -14,9 +14,10 @@ done
 
 test=()
 for k in {1..5}; do
-        test+=($k )
+        #test+=($k )
         while ( ${#k} <= 5 )
-        	@ k = 0$k
+        	@ k = "0$k"
+                echo $k
         end
 done
 echo ${test[@]}
