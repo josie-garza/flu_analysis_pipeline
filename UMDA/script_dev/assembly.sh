@@ -16,7 +16,7 @@ test=()
 for k in {1..5}; do
         test+=$k
 done
-echo ${arr[@]}
+echo ${test[@]}
 
 # samples=(00001)
 # ## Step 03: Recruit reads to a Flu reference
