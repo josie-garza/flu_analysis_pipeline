@@ -21,7 +21,6 @@ for k in {1..237}; do
         done
         samples+=($c )
 done
-echo ${samples[@]}
 
 ## Step 03: Recruit reads to a Flu reference
 for j in "${samples[@]}"; do
