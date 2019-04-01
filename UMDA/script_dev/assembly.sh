@@ -12,15 +12,21 @@ for i in "${directories[@]}"; do
         mkdir $i
 done
 
-test=()
-for k in {1..5}; do
-        #test+=($k )
-        while ( ${#k} <= 5 )
-        	@ k = "0$k"
-                echo $k
-        end
-done
-echo ${test[@]}
+k = 1
+while ( ${#k} <= 5 )
+        @ k = "0$k"
+        echo $k
+end
+
+# test=()
+# for k in {1..5}; do
+#         #test+=($k )
+#         while ( ${#k} <= 5 )
+#         	@ k = "0$k"
+#                 echo $k
+#         end
+# done
+# echo ${test[@]}
 
 # samples=(00001)
 # ## Step 03: Recruit reads to a Flu reference
