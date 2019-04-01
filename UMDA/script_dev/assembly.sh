@@ -15,6 +15,7 @@ done
 test=()
 for k in {1..5}; do
         test+=($k )
+        echo ${#k}
 done
 echo ${test[@]}
 
