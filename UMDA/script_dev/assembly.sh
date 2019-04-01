@@ -15,7 +15,7 @@ done
 test=()
 for k in {1..5}; do
         c=$k
-        while [ ${#c} -le 5 ]
+        while [ ${#c} -le 4 ]
         do
                 c="0$c"
         done
