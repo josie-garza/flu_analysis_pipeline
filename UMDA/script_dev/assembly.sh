@@ -12,11 +12,17 @@ for i in "${directories[@]}"; do
         mkdir $i
 done
 
-k=1
-while ( ${#k} <= 5 )
-        @ k = "0$k"
-        echo $k
+c=1
+while ( $c <= 5 )
+	echo "Welcome $c times"
+	@ c = $c + 1
 end
+
+# k=1
+# while ( ${#k} <= 5 )
+#         @ k = "0$k"
+#         echo $k
+# end
 
 # test=()
 # for k in {1..5}; do
