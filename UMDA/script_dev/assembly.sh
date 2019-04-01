@@ -9,9 +9,5 @@ SCRIPTS="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ## Create the working directories
 directories=( 03-bowtie2)
 for i in "${directories[@]}"; do
-    mkdir -p $WORKING/$i
-    if [ -d $WORKING/$i/$SAMPLE ]; then
-	rm -rf $WORKING/$i/$SAMPLE
-    fi
-    mkdir -p $WORKING/$i/$SAMPLE
+    mkdir $i
 done
