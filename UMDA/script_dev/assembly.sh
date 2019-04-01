@@ -15,5 +15,7 @@ for j in "${samples[@]}"; do
     bowtie2 -x ${REFERENCE} \
     -1  00-reads/UMDA_$j.1.fastq\
     -2  00-reads/UMDA_$j.2.fastq\
-    -S 03-bowtie2/$j.sam
+    -S 03-bowtie2/$j.sam\
+    --no-unal\
+    -q
 done
