@@ -12,7 +12,7 @@ for i in "${directories[@]}"; do
         mkdir $i
 done
 
-k = 1
+k=1
 while ( ${#k} <= 5 )
         @ k = "0$k"
         echo $k
