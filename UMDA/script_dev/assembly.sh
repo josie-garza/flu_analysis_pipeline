@@ -7,9 +7,10 @@ REFERENCE="references/flu_ref"
 SCRIPTS="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 ## Create the working directories
-directories=( 03-bowtie2)
+directories=(03-bowtie2)
 for i in "${directories[@]}"; do
     mkdir $i
+    mkdir -p $WORKING/$i/$SAMPLE
 done
 
 ## Step 03: Recruit reads to a Flu reference
