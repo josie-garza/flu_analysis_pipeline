@@ -16,4 +16,4 @@ done
 bowtie2 -x ${REFERENCE} \
     -1 $WORKING/02-flash/$SAMPLE/out.notCombined_1.fastq \
     -2 $WORKING/02-flash/$SAMPLE/out.notCombined_2.fastq \
-     2> $WORKING/03-bowtie2/$SAMPLE/bowtie2.log
+    -S $WORKING/$SAMPLE/out.sam
