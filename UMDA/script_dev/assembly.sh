@@ -13,7 +13,7 @@ for i in "${directories[@]}"; do
 done
 
 samples=()
-for k in {1..20}; do
+for k in {1..237}; do
         c=$k
         while [ ${#c} -le 4 ]
         do
