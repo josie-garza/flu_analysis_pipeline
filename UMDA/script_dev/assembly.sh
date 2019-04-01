@@ -18,4 +18,7 @@ for j in "${samples[@]}"; do
     -2  00-reads/UMDA_$j.2.fastq\
     -S 03-bowtie2/$j.sam\
     --no-unal
+    samtools view -Sb $j.sam > $j.bam
+    samtools sort $j.bam -o $j_sorted.bam
+    samtools index $j_sorted.bam
 done
