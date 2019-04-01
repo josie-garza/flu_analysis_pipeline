@@ -3,7 +3,7 @@ set -e
 
 WORKING=$1
 SAMPLE=$2
-REFERENCE="$WORKING/references/flu_ref"
+REFERENCE="references/flu_ref"
 SCRIPTS="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 ## Create the working directories
