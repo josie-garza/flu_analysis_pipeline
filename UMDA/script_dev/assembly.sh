@@ -12,22 +12,16 @@ for i in "${directories[@]}"; do
         mkdir $i
 done
 
-c=1
-while [ ${#c} -le 5 ]
-do
-	echo "Welcone $c times"
-        c="0$c"
+test=()
+for k in {1..5}; do
+        c=k
+        while [ ${#c} -le 5 ]
+        do
+                c="0$c"
+        done
+        test+=($c )
 done
-
-# test=()
-# for k in {1..5}; do
-#         #test+=($k )
-#         while ( ${#k} <= 5 )
-#         	@ k = "0$k"
-#                 echo $k
-#         end
-# done
-# echo ${test[@]}
+echo ${test[@]}
 
 # samples=(00001)
 # ## Step 03: Recruit reads to a Flu reference
