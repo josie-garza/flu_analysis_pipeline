@@ -21,6 +21,6 @@ for j in "${samples[@]}"; do
     samtools view -Sb 03-bowtie2/$j.sam > 03-bowtie2/$j.bam
     samtools sort 03-bowtie2/$j.bam -o 03-bowtie2/$j.sorted.bam
     samtools index 03-bowtie2/$j.sorted.bam
-    rm $j.sam
-    rm $j.bam
+    rm 03-bowtie2/$j.sam
+    rm 03-bowtie2/$j.bam
 done
