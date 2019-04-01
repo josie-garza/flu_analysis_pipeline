@@ -8,6 +8,7 @@ directories=(03-bowtie2)
 for i in "${directories[@]}"; do
     if [ -d $i ]; then
         rm -rf $i
+    fi
     mkdir $i
 done
 
