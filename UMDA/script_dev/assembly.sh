@@ -11,6 +11,6 @@ done
 
 samples=(00001)
 ## Step 03: Recruit reads to a Flu reference
-for j in "${directories[@]}"; do
+for j in "${samples[@]}"; do
     echo $j
 done
