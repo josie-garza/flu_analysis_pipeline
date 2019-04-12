@@ -49,13 +49,13 @@ done
 # done
 
 # Create a vcf for every sorted bam file
-# for j in "${samples[@]}"; do
-#     # check to make sure the sample exists in the folder
-#     if [ -f /research/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
-#             echo $j
-#             lofreq call -f ${REFERENCE} -o 04-vcf/$j.vcf 03-bowtie2/$j.sorted.bam
-#     fi
-# done
+for j in "${samples[@]}"; do
+    # check to make sure the sample exists in the folder
+    if [ -f /research/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
+            echo $j
+            lofreq call -f ${REFERENCE} -o 04-vcf/$j.vcf 03-bowtie2/$j.sorted.bam
+    fi
+done
 
 # Update the vcf
 for j in "${samples[@]}"; do
