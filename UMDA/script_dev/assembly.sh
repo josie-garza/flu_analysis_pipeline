@@ -63,7 +63,7 @@ for j in "${samples[@]}"; do
     if [ -f /research/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
             echo $j
             INPUT_CHR_NAME=$(cat 04-vcf/$j.vcf | grep -v "^#" | cut -f 1 | uniq)
-            echo INPUT_CHR_NAME
+            echo $INPUT_CHR_NAME
             #SNPEFF_CHR_NAME=$(md5sum 'file.txt')
             #if [ "$LOCALMD5" == "$REMOTEMD5" ]
             #then
