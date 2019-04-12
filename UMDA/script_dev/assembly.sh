@@ -64,7 +64,8 @@ for j in "${samples[@]}"; do
             echo $j
             INPUT_CHR_NAME=$(cat 04-vcf/$j.vcf | grep -v "^#" | cut -f 1 | uniq)
             echo $INPUT_CHR_NAME
-            IFS= read -ra ADDR <<< "$INPUT_CHR_NAME"
+            #IFS= read -ra ADDR <<< "$INPUT_CHR_NAME"
+            read -a ADDR <<< $INPUT_CHR_NAME
             echo $ADDR
             for i in "${ADDR[@]}"; do
                     echo $i
