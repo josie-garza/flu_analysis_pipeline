@@ -5,7 +5,7 @@ set -e
 REFERENCE="references/fluA_ny_h3n2.fna"
 
 # Create the directory for the sorted bam files
-directories=(04-vcf 05-html 06-annotated_vcf)
+directories=(04-vcf 05-html 06-annotated_vcf 07-genes)
 for i in "${directories[@]}"; do
         # remove if it already exists
         if [ -d $i ]; then
@@ -83,5 +83,7 @@ for j in "${samples[@]}"; do
     if [ -f /research/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
             echo $j
             java -Xmx4g -jar ~/snpEff/snpEff.jar -v -stats 05-html/$j.html flu 04-vcf/$j.updated.vcf > 06-annotated_vcf/$j.ann.vcf
+            cp 05-html/$j.genes.txt 07-genes/$j.genes.txt
+            rm 05-html/$j.genes.txt
     fi
 done
