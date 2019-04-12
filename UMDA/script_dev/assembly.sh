@@ -66,7 +66,7 @@ for j in "${samples[@]}"; do
             echo $INPUT_CHR_NAME
             #IFS= read -ra ADDR <<< "$INPUT_CHR_NAME"
             read -a ADDR <<< "$INPUT_CHR_NAME"
-            echo $ADDR
+            echo "array $ADDR"
             for i in "${ADDR[@]}"; do
                     echo $i
                     b=${i:0:9}
