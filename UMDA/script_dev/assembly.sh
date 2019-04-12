@@ -67,11 +67,12 @@ for j in "${samples[@]}"; do
             ADDR=($INPUT_CHR_NAME)
             len=${#ADDR[@]}
             echo "length $len"
-            for i in "${ADDR[@]}"; do
-                    echo "old $i"
-                    b=${i:0:9}
+            for (( i=0; i<$len; i++ )); do
+                    old=${distro[$i]}
+                    echo "old $old"
+                    b=${old:0:9}
                     echo "new $b"
-                    cat 04-vcf/$j.vcf | sed "s/^$i/$b/" > 04-vcf/$j.updated.vcf
+                    cat 04-vcf/$j.vcf | sed "s/^$old/$b/" > 04-vcf/$j.updated.vcf
             done
             UPDATED=$(cat 04-vcf/$j.updated.vcf | grep -v "^#" | cut -f 1 | uniq)
             echo "updated $UPDATED"
