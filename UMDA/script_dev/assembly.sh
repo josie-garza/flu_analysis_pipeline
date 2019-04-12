@@ -58,6 +58,21 @@ for j in "${samples[@]}"; do
 done
 
 # update the vcf
+for j in "${samples[@]}"; do
+    # check to make sure the sample exists in the folder
+    if [ -f /research/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
+            echo $j
+            INPUT_CHR_NAME=$(cat 04-vcf/$j.vcf | grep -v "^#" | cut -f 1 | uniq)
+            echo INPUT_CHR_NAME
+            #SNPEFF_CHR_NAME=$(md5sum 'file.txt')
+            #if [ "$LOCALMD5" == "$REMOTEMD5" ]
+            #then
+            #  echo "all OK"
+            #else
+            #  echo -e "no match, Local:"$LOCALMD5"\nRemote:"$REMOTEMD5
+            fi
+    fi
+done
 # run snp on the updated vcf
 #
 #
