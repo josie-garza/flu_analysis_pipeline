@@ -71,7 +71,7 @@ for j in "${samples[@]}"; do
                     echo "new $b"
                     cat 04-vcf/$j.vcf | sed "s/^$i/$b/" > 04-vcf/$j.vcf
             done
-            UPDATED=$(cat 04-vcf/$j.updated.vcf | grep -v "^#" | cut -f 1 | uniq)
+            UPDATED=$(cat 04-vcf/$j.vcf | grep -v "^#" | cut -f 1 | uniq)
             echo "updated $UPDATED"
     fi
 done
