@@ -16,7 +16,7 @@ done
 
 # Create a list for the number of samples to run the assembly on
 samples=()
-for k in {1..14}; do  #237 is the number of samples
+for k in {1..11}; do  #237 is the number of samples
         c=$k
         while [ ${#c} -le 4 ]
         do
@@ -49,13 +49,13 @@ done
 # done
 
 # Create a vcf for every sorted bam file
-for j in "${samples[@]}"; do
-    # check to make sure the sample exists in the folder
-    if [ -f /research/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
-            echo $j
-            lofreq call -f ${REFERENCE} -o 04-vcf/$j.vcf 03-bowtie2/$j.sorted.bam
-    fi
-done
+# for j in "${samples[@]}"; do
+#     # check to make sure the sample exists in the folder
+#     if [ -f /research/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
+#             echo $j
+#             lofreq call -f ${REFERENCE} -o 04-vcf/$j.vcf 03-bowtie2/$j.sorted.bam
+#     fi
+# done
 
 # Update the vcf
 for j in "${samples[@]}"; do
@@ -65,20 +65,11 @@ for j in "${samples[@]}"; do
             INPUT_CHR_NAME=$(cat 04-vcf/$j.vcf | grep -v "^#" | cut -f 1 | uniq)
             echo $INPUT_CHR_NAME
             ADDR=($INPUT_CHR_NAME)
-            len=${#ADDR[@]}
-            echo "length $len"
-            for (( i=0; i<$len; i++ )); do
-                    old=${ADDR[$i]}
-                    echo "old $old"
-                    b=${old:0:9}
+            for i in "${ADDR[@]}"; do
+                    echo "old $i"
+                    b=${i:0:9}
                     echo "new $b"
-                    k=$((i-1))
-                    if [ $i == 0 ]
-                    then
-                            cat 04-vcf/$j.vcf | sed "s/^$old/$b/" > 04-vcf/$j.updated.$i.vcf
-                    else
-                            cat 04-vcf/$j.updated.$k.vcf | sed "s/^$old/$b/" > 04-vcf/$j.updated.$i.vcf
-                    fi
+                    cat 04-vcf/$j.vcf | sed "s/^$i/$b/" > 04-vcf/$j.updated.vcf
             done
             UPDATED=$(cat 04-vcf/$j.updated.vcf | grep -v "^#" | cut -f 1 | uniq)
             echo "updated $UPDATED"
