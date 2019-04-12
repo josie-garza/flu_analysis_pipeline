@@ -1,0 +1,5 @@
+# The following table is formatted as tab separated values. 
+#GeneName	GeneId	TranscriptId	BioType	variants_impact_LOW	variants_impact_MODERATE	variants_impact_MODIFIER	variants_effect_downstream_gene_variant	variants_effect_missense_variant	variants_effect_synonymous_variant	variants_effect_upstream_gene_variant
+HA	FLUAVH3N2_s4p1	FLUAVH3N2_s4p1	protein_coding	40	22	1	0	22	40	1
+PA	FLUAVH3N2_s3p1	FLUAVH3N2_s3p1	protein_coding	43	12	1	0	12	43	1
+PA-X	FLUAVH3N2_s3p2	FLUAVH3N2_s3p2	protein_coding	18	5	33	32	5	18	1

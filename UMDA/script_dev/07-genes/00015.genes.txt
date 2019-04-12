@@ -1,0 +1,4 @@
+# The following table is formatted as tab separated values. 
+#GeneName	GeneId	TranscriptId	BioType	variants_impact_HIGH	variants_impact_LOW	variants_impact_MODERATE	variants_impact_MODIFIER	variants_effect_missense_variant	variants_effect_stop_gained	variants_effect_synonymous_variant	variants_effect_upstream_gene_variant
+NP	FLUAVH3N2_s5p1	FLUAVH3N2_s5p1	protein_coding	1	20	1	1	1	1	20	1
+PB2	FLUAVH3N2_s1p1	FLUAVH3N2_s1p1	protein_coding	0	21	2	0	2	0	21	0

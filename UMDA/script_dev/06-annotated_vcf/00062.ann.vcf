@@ -1,0 +1,75 @@
+##fileformat=VCFv4.0
+##fileDate=20190412
+##source=lofreq call -f references/fluA_ny_h3n2.fna -o 04-vcf/00062.vcf 03-bowtie2/00062.sorted.bam 
+##reference=references/fluA_ny_h3n2.fna
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Raw Depth">
+##INFO=<ID=AF,Number=1,Type=Float,Description="Allele Frequency">
+##INFO=<ID=SB,Number=1,Type=Integer,Description="Phred-scaled strand bias at this position">
+##INFO=<ID=DP4,Number=4,Type=Integer,Description="Counts for ref-forward bases, ref-reverse, alt-forward and alt-reverse bases">
+##INFO=<ID=INDEL,Number=0,Type=Flag,Description="Indicates that the variant is an INDEL.">
+##INFO=<ID=CONSVAR,Number=0,Type=Flag,Description="Indicates that the variant is a consensus variant (as opposed to a low frequency variant).">
+##INFO=<ID=HRUN,Number=1,Type=Integer,Description="Homopolymer length to the right of report indel position">
+##FILTER=<ID=min_dp_10,Description="Minimum Coverage 10">
+##FILTER=<ID=sb_fdr,Description="Strand-Bias Multiple Testing Correction: fdr corr. pvalue > 0.001000">
+##FILTER=<ID=min_snvqual_57,Description="Minimum SNV Quality (Phred) 57">
+##FILTER=<ID=min_indelqual_20,Description="Minimum Indel Quality (Phred) 20">
+##SnpEffVersion="4.3t (build 2017-11-24 10:18), by Pablo Cingolani"
+##SnpEffCmd="SnpEff  -stats 05-html/00062.html flu 04-vcf/00062.updated.vcf "
+##INFO=<ID=ANN,Number=.,Type=String,Description="Functional annotations: 'Allele | Annotation | Annotation_Impact | Gene_Name | Gene_ID | Feature_Type | Feature_ID | Transcript_BioType | Rank | HGVS.c | HGVS.p | cDNA.pos / cDNA.length | CDS.pos / CDS.length | AA.pos / AA.length | Distance | ERRORS / WARNINGS / INFO' ">
+##INFO=<ID=LOF,Number=.,Type=String,Description="Predicted loss of function effects for this variant. Format: 'Gene_Name | Gene_ID | Number_of_transcripts_in_gene | Percent_of_transcripts_affected'">
+##INFO=<ID=NMD,Number=.,Type=String,Description="Predicted nonsense mediated decay effects for this variant. Format: 'Gene_Name | Gene_ID | Number_of_transcripts_in_gene | Percent_of_transcripts_affected'">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+NC_007373	54	.	C	T	5510.0	PASS	DP=161;AF=1.000000;SB=0;DP4=0,0,96,65;ANN=T|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.27C>T|p.Asn9Asn|27/2280|27/2280|9/759||
+NC_007373	192	.	C	T	16257.0	PASS	DP=504;AF=1.000000;SB=0;DP4=0,0,296,208;ANN=T|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.165C>T|p.Tyr55Tyr|165/2280|165/2280|55/759||
+NC_007373	214	.	A	G	17509.0	PASS	DP=562;AF=1.000000;SB=0;DP4=0,0,329,233;ANN=G|missense_variant|MODERATE|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.187A>G|p.Ile63Val|187/2280|187/2280|63/759||
+NC_007373	289	.	C	A	21485.0	PASS	DP=844;AF=0.990521;SB=0;DP4=1,1,549,287;ANN=A|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.262C>A|p.Arg88Arg|262/2280|262/2280|88/759||
+NC_007373	318	.	A	G	20318.0	PASS	DP=854;AF=0.997658;SB=8;DP4=0,2,528,324;ANN=G|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.291A>G|p.Thr97Thr|291/2280|291/2280|97/759||
+NC_007373	330	.	A	G	23379.0	PASS	DP=961;AF=1.000000;SB=0;DP4=0,0,584,377;ANN=G|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.303A>G|p.Arg101Arg|303/2280|303/2280|101/759||
+NC_007373	343	.	G	A	23344.0	PASS	DP=972;AF=0.995885;SB=0;DP4=1,0,563,405;ANN=A|missense_variant|MODERATE|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.316G>A|p.Ala106Thr|316/2280|316/2280|106/759||
+NC_007373	369	.	A	G	24058.0	PASS	DP=997;AF=0.995988;SB=3;DP4=0,1,526,467;ANN=G|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.342A>G|p.Val114Val|342/2280|342/2280|114/759||
+NC_007373	375	.	G	A	24480.0	PASS	DP=1006;AF=0.997018;SB=0;DP4=0,0,517,486;ANN=A|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.348G>A|p.Lys116Lys|348/2280|348/2280|116/759||
+NC_007373	384	.	T	C	24766.0	PASS	DP=1022;AF=0.995108;SB=0;DP4=2,2,513,504;ANN=C|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.357T>C|p.Phe119Phe|357/2280|357/2280|119/759||
+NC_007373	426	.	T	C	24446.0	PASS	DP=994;AF=0.996982;SB=2;DP4=2,1,427,564;ANN=C|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.399T>C|p.Val133Val|399/2280|399/2280|133/759||
+NC_007373	432	.	T	C	24603.0	PASS	DP=987;AF=0.996960;SB=0;DP4=1,1,411,573;ANN=C|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.405T>C|p.Phe135Phe|405/2280|405/2280|135/759||
+NC_007373	552	.	G	A	18920.0	PASS	DP=602;AF=0.998339;SB=0;DP4=0,0,227,374;ANN=A|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.525G>A|p.Arg175Arg|525/2280|525/2280|175/759||
+NC_007373	570	.	G	A	14564.0	PASS	DP=476;AF=0.987395;SB=0;DP4=0,0,208,262;ANN=A|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.543G>A|p.Ser181Ser|543/2280|543/2280|181/759||
+NC_007373	574	.	T	C	15208.0	PASS	DP=479;AF=1.000000;SB=0;DP4=0,0,211,268;ANN=C|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.547T>C|p.Leu183Leu|547/2280|547/2280|183/759||
+NC_007373	636	.	T	C	8298.0	PASS	DP=277;AF=0.985560;SB=0;DP4=1,2,123,150;ANN=C|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.609T>C|p.Val203Val|609/2280|609/2280|203/759||
+NC_007373	663	.	C	G	7472.0	PASS	DP=254;AF=0.984252;SB=0;DP4=0,0,97,153;ANN=G|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.636C>G|p.Val212Val|636/2280|636/2280|212/759||
+NC_007373	720	.	C	T	5290.0	PASS	DP=191;AF=0.937173;SB=0;DP4=0,0,92,87;ANN=T|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.693C>T|p.Val231Val|693/2280|693/2280|231/759||
+NC_007373	773	.	A	G	6601.0	PASS	DP=210;AF=0.995238;SB=0;DP4=0,1,104,105;ANN=G|missense_variant|MODERATE|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.746A>G|p.Glu249Gly|746/2280|746/2280|249/759||
+NC_007373	837	.	T	C	8459.0	PASS	DP=256;AF=1.000000;SB=0;DP4=0,0,129,127;ANN=C|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.810T>C|p.Ala270Ala|810/2280|810/2280|270/759||
+NC_007373	888	.	A	G	6524.0	PASS	DP=202;AF=1.000000;SB=0;DP4=0,0,95,107;ANN=G|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.861A>G|p.Thr287Thr|861/2280|861/2280|287/759||
+NC_007373	900	.	G	A	6152.0	PASS	DP=189;AF=0.994709;SB=0;DP4=0,0,89,99;ANN=A|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.873G>A|p.Gly291Gly|873/2280|873/2280|291/759||
+NC_007373	1008	.	G	C	3708.0	PASS	DP=125;AF=0.992000;SB=0;DP4=0,1,48,76;ANN=C|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.981G>C|p.Gly327Gly|981/2280|981/2280|327/759||
+NC_007373	1035	.	A	G	2529.0	PASS	DP=98;AF=0.969388;SB=0;DP4=0,0,50,45;ANN=G|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1008A>G|p.Ser336Ser|1008/2280|1008/2280|336/759||
+NC_007373	1050	.	G	A	9998.0	PASS	DP=370;AF=1.000000;SB=0;DP4=0,0,250,120;ANN=A|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1023G>A|p.Glu341Glu|1023/2280|1023/2280|341/759||
+NC_007373	1056	.	A	G	9928.0	PASS	DP=369;AF=1.000000;SB=0;DP4=0,0,249,120;ANN=G|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1029A>G|p.Glu343Glu|1029/2280|1029/2280|343/759||
+NC_007373	1085	.	A	G	11307.0	PASS	DP=405;AF=0.997531;SB=0;DP4=1,0,246,158;ANN=G|missense_variant|MODERATE|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1058A>G|p.Lys353Arg|1058/2280|1058/2280|353/759||
+NC_007373	1086	.	G	A	11139.0	PASS	DP=405;AF=0.990123;SB=0;DP4=1,0,244,157;ANN=A|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1059G>A|p.Lys353Lys|1059/2280|1059/2280|353/759||
+NC_007373	1149	.	C	A	23927.0	PASS	DP=788;AF=0.996193;SB=0;DP4=0,0,473,312;ANN=A|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1122C>A|p.Leu374Leu|1122/2280|1122/2280|374/759||
+NC_007373	1176	.	G	A	24647.0	PASS	DP=797;AF=0.997491;SB=0;DP4=0,0,465,330;ANN=A|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1149G>A|p.Gln383Gln|1149/2280|1149/2280|383/759||
+NC_007373	1248	.	G	A	49314.0	PASS	DP=3586;AF=0.998606;SB=0;DP4=2,1,2338,1243;ANN=A|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1221G>A|p.Glu407Glu|1221/2280|1221/2280|407/759||
+NC_007373	1287	.	C	T	49314.0	PASS	DP=4131;AF=0.994674;SB=4;DP4=4,6,2292,1817;ANN=T|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1260C>T|p.Phe420Phe|1260/2280|1260/2280|420/759||
+NC_007373	1305	.	A	G	49314.0	PASS	DP=4389;AF=0.997949;SB=0;DP4=3,2,2270,2110;ANN=G|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1278A>G|p.Gln426Gln|1278/2280|1278/2280|426/759||
+NC_007373	1362	.	T	C	49314.0	PASS	DP=4150;AF=0.998313;SB=0;DP4=1,2,1916,2227;ANN=C|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1335T>C|p.Leu445Leu|1335/2280|1335/2280|445/759||
+NC_007373	1378	.	A	G	49314.0	PASS	DP=3843;AF=0.996617;SB=7;DP4=6,3,1676,2154;ANN=G|missense_variant|MODERATE|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1351A>G|p.Ile451Val|1351/2280|1351/2280|451/759||
+NC_007373	1551	.	C	T	23056.0	PASS	DP=785;AF=0.997452;SB=3;DP4=0,2,387,396;ANN=T|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1524C>T|p.Arg508Arg|1524/2280|1524/2280|508/759||
+NC_007373	1566	.	G	A	22083.0	PASS	DP=751;AF=0.998668;SB=0;DP4=0,0,347,403;ANN=A|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1539G>A|p.Leu513Leu|1539/2280|1539/2280|513/759||
+NC_007373	1602	.	A	G	15938.0	PASS	DP=566;AF=0.996466;SB=2;DP4=0,2,198,366;ANN=G|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1575A>G|p.Glu525Glu|1575/2280|1575/2280|525/759||
+NC_007373	1606	.	T	C	15898.0	PASS	DP=553;AF=1.000000;SB=0;DP4=0,0,183,370;ANN=C|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1579T>C|p.Leu527Leu|1579/2280|1579/2280|527/759||
+NC_007373	1617	.	A	T	14723.0	PASS	DP=535;AF=0.985047;SB=0;DP4=1,2,161,366;ANN=T|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1590A>T|p.Thr530Thr|1590/2280|1590/2280|530/759||
+NC_007373	1629	.	G	A	13215.0	PASS	DP=469;AF=1.000000;SB=0;DP4=0,0,141,328;ANN=A|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1602G>A|p.Ser534Ser|1602/2280|1602/2280|534/759||
+NC_007373	1644	.	T	C	26372.0	PASS	DP=850;AF=0.994118;SB=2;DP4=2,2,536,309;ANN=C|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1617T>C|p.Ile539Ile|1617/2280|1617/2280|539/759||
+NC_007373	1692	.	A	G	35015.0	PASS	DP=1054;AF=0.989564;SB=8;DP4=0,2,660,383;ANN=G|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1665A>G|p.Arg555Arg|1665/2280|1665/2280|555/759||
+NC_007373	1863	.	C	T	33191.0	PASS	DP=1074;AF=0.978585;SB=6;DP4=6,17,422,629;ANN=T|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1836C>T|p.Thr612Thr|1836/2280|1836/2280|612/759||
+NC_007373	1864	.	A	G	33379.0	PASS	DP=1070;AF=0.982243;SB=4;DP4=5,13,418,633;ANN=G|missense_variant|MODERATE|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1837A>G|p.Thr613Ala|1837/2280|1837/2280|613/759||
+NC_007373	1896	.	C	T	28569.0	PASS	DP=900;AF=1.000000;SB=0;DP4=0,0,417,483;ANN=T|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1869C>T|p.Ala623Ala|1869/2280|1869/2280|623/759||
+NC_007373	1905	.	A	G	24060.0	PASS	DP=747;AF=1.000000;SB=0;DP4=0,0,395,352;ANN=G|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1878A>G|p.Pro626Pro|1878/2280|1878/2280|626/759||
+NC_007373	1941	.	A	G	26204.0	PASS	DP=830;AF=0.983133;SB=20;DP4=8,0,427,389;ANN=G|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1914A>G|p.Val638Val|1914/2280|1914/2280|638/759||
+NC_007373	2019	.	A	G	49314.0	PASS	DP=3032;AF=0.998351;SB=4;DP4=0,1,1871,1156;ANN=G|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.1992A>G|p.Arg664Arg|1992/2280|1992/2280|664/759||
+NC_007373	2109	.	T	C	49314.0	PASS	DP=6210;AF=0.998873;SB=0;DP4=3,2,3743,2460;ANN=C|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.2082T>C|p.Phe694Phe|2082/2280|2082/2280|694/759||
+NC_007373	2136	.	A	G	49314.0	PASS	DP=6406;AF=0.998907;SB=0;DP4=3,2,3245,3154;ANN=G|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.2109A>G|p.Arg703Arg|2109/2280|2109/2280|703/759||
+NC_007373	2253	.	C	T	49314.0	PASS	DP=4330;AF=0.998383;SB=0;DP4=1,2,1781,2542;ANN=T|synonymous_variant|LOW|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding|1/1|c.2226C>T|p.Ser742Ser|2226/2280|2226/2280|742/759||
+NC_007373	2309	.	G	A	49314.0	PASS	DP=1832;AF=0.997817;SB=0;DP4=0,2,335,1493;ANN=A|downstream_gene_variant|MODIFIER|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding||c.*2G>A|||||2|,A|intergenic_region|MODIFIER|PB2-CHR_END|FLUAVH3N2_s1p1-CHR_END|intergenic_region|FLUAVH3N2_s1p1-CHR_END|||n.2309G>A||||||
+NC_007373	2310	.	T	C	49314.0	PASS	DP=1828;AF=0.999453;SB=0;DP4=0,1,331,1496;ANN=C|downstream_gene_variant|MODIFIER|PB2|FLUAVH3N2_s1p1|transcript|FLUAVH3N2_s1p1|protein_coding||c.*3T>C|||||3|,C|intergenic_region|MODIFIER|PB2-CHR_END|FLUAVH3N2_s1p1-CHR_END|intergenic_region|FLUAVH3N2_s1p1-CHR_END|||n.2310T>C||||||
