@@ -65,13 +65,15 @@ for j in "${samples[@]}"; do
             INPUT_CHR_NAME=$(cat 04-vcf/$j.vcf | grep -v "^#" | cut -f 1 | uniq)
             echo $INPUT_CHR_NAME
             ADDR=($INPUT_CHR_NAME)
+            len=${#ADDR[@]}
+            echo "length $len"
             for i in "${ADDR[@]}"; do
                     echo "old $i"
                     b=${i:0:9}
                     echo "new $b"
-                    cat 04-vcf/$j.vcf | sed "s/^$i/$b/" > 04-vcf/$j.vcf
+                    cat 04-vcf/$j.vcf | sed "s/^$i/$b/" > 04-vcf/$j.updated.vcf
             done
-            UPDATED=$(cat 04-vcf/$j.vcf | grep -v "^#" | cut -f 1 | uniq)
+            UPDATED=$(cat 04-vcf/$j.updated.vcf | grep -v "^#" | cut -f 1 | uniq)
             echo "updated $UPDATED"
     fi
 done
