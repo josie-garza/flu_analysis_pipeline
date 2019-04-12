@@ -68,7 +68,7 @@ for j in "${samples[@]}"; do
             len=${#ADDR[@]}
             echo "length $len"
             for (( i=0; i<$len; i++ )); do
-                    old=${distro[$i]}
+                    old=${ADDR[$i]}
                     echo "old $old"
                     b=${old:0:9}
                     echo "new $b"
