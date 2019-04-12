@@ -70,7 +70,7 @@ for j in "${samples[@]}"; do
             #  echo "all OK"
             #else
             #  echo -e "no match, Local:"$LOCALMD5"\nRemote:"$REMOTEMD5
-            fi
+            # fi
     fi
 done
 
