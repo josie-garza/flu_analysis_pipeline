@@ -53,7 +53,7 @@ for j in "${samples[@]}"; do
     # check to make sure the sample exists in the folder
     if [ -f /research/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
             echo $j
-            lofreq call -f ${REFERENCE} -o 04-vcf/$j.vcf 03-bowtie2/$j.sorted.bam
+            call-parallel --pp-threads 8 -f ${REFERENCE} -o 04-vcf/$j.vcf 03-bowtie2/$j.sorted.bam
     fi
 done
 
