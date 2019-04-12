@@ -16,7 +16,7 @@ REFERENCE="references/fluA_ny_h3n2.fna"
 
 # Create a list for the number of samples to run the assembly on
 samples=()
-for k in {108..237}; do  #237 is the number of samples
+for k in {109..237}; do  #237 is the number of samples
         c=$k
         while [ ${#c} -le 4 ]
         do
