@@ -65,11 +65,11 @@ for j in "${samples[@]}"; do
             INPUT_CHR_NAME=$(cat 04-vcf/$j.vcf | grep -v "^#" | cut -f 1 | uniq)
             echo $INPUT_CHR_NAME
             #IFS= read -ra ADDR <<< "$INPUT_CHR_NAME"
-            read -a ADDR <<< "$INPUT_CHR_NAME"
-            echo "first elem ${INPUT_CHR_NAME[0]}"
-            echo "array $ADDR"
-            for i in "${ADDR[@]}"; do
-                    echo $i
+            #read -a ADDR <<< "$INPUT_CHR_NAME"
+            #echo "first elem ${INPUT_CHR_NAME[0]}"
+            #echo "array $ADDR"
+            for i in "${INPUT_CHR_NAME[@]}"; do
+                    echo "i here $i"
                     b=${i:0:9}
                     echo $b
                     cat 04-vcf/$j.vcf | sed "s/^$i/$b/" > 04-vcf/$j.updated.vcf
