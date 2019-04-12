@@ -72,7 +72,13 @@ for j in "${samples[@]}"; do
                     echo "old $old"
                     b=${old:0:9}
                     echo "new $b"
-                    cat 04-vcf/$j.vcf | sed "s/^$old/$b/" > 04-vcf/$j.updated.vcf
+                    k=$i-1
+                    if [ $i == 0 ]
+                    then
+                            cat 04-vcf/$j.vcf | sed "s/^$old/$b/" > 04-vcf/$j.updated.$i.vcf
+                    else
+                            cat 04-vcf/$j.updated.$k.vcf | sed "s/^$old/$b/" > 04-vcf/$j.updated.$i.vcf
+                    fi
             done
             UPDATED=$(cat 04-vcf/$j.updated.vcf | grep -v "^#" | cut -f 1 | uniq)
             echo "updated $UPDATED"
