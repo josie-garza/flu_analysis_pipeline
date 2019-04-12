@@ -16,7 +16,7 @@ done
 
 # Create a list for the number of samples to run the assembly on
 samples=()
-for k in {1..11}; do  #237 is the number of samples
+for k in {1..237}; do  #237 is the number of samples
         c=$k
         while [ ${#c} -le 4 ]
         do
@@ -52,7 +52,7 @@ done
 for j in "${samples[@]}"; do
     # check to make sure the sample exists in the folder
     if [ -f /research/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
-            echo $j
+            #echo $j
             lofreq call -f ${REFERENCE} -o 04-vcf/$j.vcf 03-bowtie2/$j.sorted.bam
     fi
 done
@@ -63,17 +63,17 @@ for j in "${samples[@]}"; do
     if [ -f /research/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
             echo $j
             INPUT_CHR_NAME=$(cat 04-vcf/$j.vcf | grep -v "^#" | cut -f 1 | uniq)
-            echo $INPUT_CHR_NAME
+            #echo $INPUT_CHR_NAME
             ADDR=($INPUT_CHR_NAME)
             for i in "${ADDR[@]}"; do
-                    echo "old $i"
+                    #echo "old $i"
                     b=${i:0:9}
-                    echo "new $b"
+                    #echo "new $b"
                     cat 04-vcf/$j.vcf | sed "s/^$i/$b/" > 04-vcf/$j.updated.vcf
                     cp 04-vcf/$j.updated.vcf 04-vcf/$j.vcf
             done
             UPDATED=$(cat 04-vcf/$j.updated.vcf | grep -v "^#" | cut -f 1 | uniq)
-            echo "updated $UPDATED"
+            #echo "updated $UPDATED"
     fi
 done
 
@@ -81,7 +81,7 @@ done
 for j in "${samples[@]}"; do
     # check to make sure the sample exists in the folder
     if [ -f /research/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
-            echo $j
+            #echo $j
             java -Xmx4g -jar ~/snpEff/snpEff.jar -v -stats 05-html/$j.html flu 04-vcf/$j.updated.vcf > 06-annotated_vcf/$j.ann.vcf
             cp 05-html/$j.genes.txt 07-genes/$j.genes.txt
             rm 05-html/$j.genes.txt
