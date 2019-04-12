@@ -48,6 +48,7 @@ done
 #     fi
 # done
 
+# updated yuh
 # Create a vcf for every sorted bam file
 # for j in "${samples[@]}"; do
 #     # check to make sure the sample exists in the folder
