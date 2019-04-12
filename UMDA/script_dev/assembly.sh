@@ -65,14 +65,10 @@ for j in "${samples[@]}"; do
             INPUT_CHR_NAME=$(cat 04-vcf/$j.vcf | grep -v "^#" | cut -f 1 | uniq)
             echo $INPUT_CHR_NAME
             ADDR=($INPUT_CHR_NAME)
-            #IFS= read -ra ADDR <<< "$INPUT_CHR_NAME"
-            #read -a ADDR <<< "$INPUT_CHR_NAME"
-            #echo "first elem ${INPUT_CHR_NAME[0]}"
-            echo "array $ADDR"
             for i in "${ADDR[@]}"; do
-                    echo "i here $i"
+                    echo "old $i"
                     b=${i:0:9}
-                    echo $b
+                    echo "new $b"
                     cat 04-vcf/$j.vcf | sed "s/^$i/$b/" > 04-vcf/$j.updated.vcf
             done
     fi
@@ -83,6 +79,6 @@ for j in "${samples[@]}"; do
     # check to make sure the sample exists in the folder
     if [ -f /research/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
             echo $j
-            java -Xmx4g -jar ~/snpEFf/snpEff.jar -v -stats 05-html/$j.html flu 04-vcf/$j.updated.vcf > 06-annotated_vcf/$j.ann.vcf
+            java -Xmx4g -jar ~/snpEff/snpEff.jar -v -stats 05-html/$j.html flu 04-vcf/$j.updated.vcf > 06-annotated_vcf/$j.ann.vcf
     fi
 done
