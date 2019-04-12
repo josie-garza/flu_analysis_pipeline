@@ -72,7 +72,7 @@ for j in "${samples[@]}"; do
                     echo "old $old"
                     b=${old:0:9}
                     echo "new $b"
-                    k=$i-1
+                    k=$((i-1))
                     if [ $i == 0 ]
                     then
                             cat 04-vcf/$j.vcf | sed "s/^$old/$b/" > 04-vcf/$j.updated.$i.vcf
