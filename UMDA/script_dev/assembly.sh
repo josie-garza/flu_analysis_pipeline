@@ -48,7 +48,6 @@ done
 #     fi
 # done
 
-# updated yuh
 # Create a vcf for every sorted bam file
 # for j in "${samples[@]}"; do
 #     # check to make sure the sample exists in the folder
@@ -79,11 +78,10 @@ done
 # done
 
 # Run snp on the updated vcf
-for j in "${samples[@]}"; do
-    # check to make sure the sample exists in the folder
-    if [ -f /research/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
-            #echo $j
-            #java -Xmx4g -jar ~/snpEff/snpEff.jar -v -stats 05-html/$j.html flu 04-vcf/$j.updated.vcf > 06-annotated_vcf/$j.ann.vcf
-            cp 07-genes/$j.genes.txt 05-html/$j.genes.txt
-    fi
-done
+# for j in "${samples[@]}"; do
+#     # check to make sure the sample exists in the folder
+#     if [ -f /research/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
+#             #echo $j
+#             java -Xmx4g -jar ~/snpEff/snpEff.jar -v -stats 05-html/$j.html flu 04-vcf/$j.updated.vcf > 06-annotated_vcf/$j.ann.vcf
+#     fi
+# done
