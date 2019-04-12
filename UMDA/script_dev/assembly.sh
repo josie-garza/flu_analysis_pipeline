@@ -16,7 +16,7 @@ done
 
 # Create a list for the number of samples to run the assembly on
 samples=()
-for k in {1..5}; do  #237 is the number of samples
+for k in {110..113}; do  #237 is the number of samples
         c=$k
         while [ ${#c} -le 4 ]
         do
