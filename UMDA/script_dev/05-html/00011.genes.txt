@@ -1,0 +1,16 @@
+# The following table is formatted as tab separated values. 
+#GeneName	GeneId	TranscriptId	BioType	variants_impact_LOW	variants_impact_MODERATE	variants_impact_MODIFIER	variants_effect_downstream_gene_variant	variants_effect_missense_variant	variants_effect_synonymous_variant	variants_effect_upstream_gene_variant
+HA	FLUAVH3N2_s4p1	FLUAVH3N2_s4p1	protein_coding	39	24	0	0	24	39	0
+M1	FLUAVH3N2_s7p2	FLUAVH3N2_s7p2	protein_coding	10	1	3	3	1	10	0
+M2	FLUAVH3N2_s7p1	FLUAVH3N2_s7p1	protein_coding	0	0	14	14	0	0	0
+M2	FLUAVH3N2_s7p1_circ	FLUAVH3N2_s7p1_circ	protein_coding	1	2	11	0	2	1	11
+NA	FLUAVH3N2_s6p1	FLUAVH3N2_s6p1	protein_coding	23	19	0	0	19	23	0
+NEP	FLUAVH3N2_s8p1	FLUAVH3N2_s8p1	protein_coding	0	0	10	10	0	0	0
+NEP	FLUAVH3N2_s8p1_circ	FLUAVH3N2_s8p1_circ	protein_coding	4	1	5	0	1	4	5
+NP	FLUAVH3N2_s5p1	FLUAVH3N2_s5p1	protein_coding	21	1	1	0	1	21	1
+NS1	FLUAVH3N2_s8p2	FLUAVH3N2_s8p2	protein_coding	2	5	3	3	5	2	0
+PA	FLUAVH3N2_s3p1	FLUAVH3N2_s3p1	protein_coding	45	11	2	1	11	45	1
+PA-X	FLUAVH3N2_s3p2	FLUAVH3N2_s3p2	protein_coding	18	4	36	35	4	18	1
+PB1	FLUAVH3N2_s2p1	FLUAVH3N2_s2p1	protein_coding	61	9	0	0	9	61	0
+PB1-F2	FLUAVH3N2_s2p2	FLUAVH3N2_s2p2	protein_coding	0	9	61	57	9	0	4
+PB2	FLUAVH3N2_s1p1	FLUAVH3N2_s1p1	protein_coding	46	12	2	2	12	46	0
