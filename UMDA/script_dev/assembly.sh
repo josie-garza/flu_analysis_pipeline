@@ -78,10 +78,10 @@ for j in "${samples[@]}"; do
 done
 
 # Run snp on the updated vcf
-# for j in "${samples[@]}"; do
-    # check to make sure the sample exists in the folder
-    # if [ -f /research/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
-    #         echo $j
-    #         java -Xmx4g -jar ~/snpEff/snpEff.jar -v -stats 05-html/$j.html flu 04-vcf/$j.updated.vcf > 06-annotated_vcf/$j.ann.vcf
-    # fi
-# done
+for j in "${samples[@]}"; do
+    check to make sure the sample exists in the folder
+    if [ -f /research/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
+            echo $j
+            java -Xmx4g -jar ~/snpEff/snpEff.jar -v -stats 05-html/$j.html flu 04-vcf/$j.updated.vcf > 06-annotated_vcf/$j.ann.vcf
+    fi
+done
