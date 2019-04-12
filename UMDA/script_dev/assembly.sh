@@ -2,7 +2,7 @@
 set -e
 
 ## built by bowtie2-build
-REFERENCE="references/flu_ref"
+REFERENCE="references/fluA_ny_h3n2.fna"
 
 ## Create the directory for the sorted bam files
 directories=(04-vcf)
