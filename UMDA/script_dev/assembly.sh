@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
 
-## built by bowtie2-build
+# Built by bowtie2-build
 REFERENCE="references/fluA_ny_h3n2.fna"
 
-## Create the directory for the sorted bam files
+# Create the directory for the sorted bam files
 directories=(04-vcf)
 for i in "${directories[@]}"; do
         # remove if it already exists
@@ -14,7 +14,7 @@ for i in "${directories[@]}"; do
         mkdir $i
 done
 
-## create a list for the number of samples to run the assembly on
+# Create a list for the number of samples to run the assembly on
 samples=()
 for k in {1..237}; do  #237 is the number of samples
         c=$k
@@ -25,7 +25,7 @@ for k in {1..237}; do  #237 is the number of samples
         samples+=($c )
 done
 
-## created sorted bam files
+# Created sorted bam files
 # for j in "${samples[@]}"; do
 #     # check to make sure the sample exists in the folder
 #     if [ -f /research/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
@@ -48,16 +48,16 @@ done
 #     fi
 # done
 
-# create a vcf for every sorted bam file
-for j in "${samples[@]}"; do
-    # check to make sure the sample exists in the folder
-    if [ -f /research/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
-            echo $j
-            lofreq call -f ${REFERENCE} -o 04-vcf/$j.vcf 03-bowtie2/$j.sorted.bam
-    fi
-done
+# Create a vcf for every sorted bam file
+# for j in "${samples[@]}"; do
+#     # check to make sure the sample exists in the folder
+#     if [ -f /research/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
+#             echo $j
+#             lofreq call -f ${REFERENCE} -o 04-vcf/$j.vcf 03-bowtie2/$j.sorted.bam
+#     fi
+# done
 
-# update the vcf
+# Update the vcf
 for j in "${samples[@]}"; do
     # check to make sure the sample exists in the folder
     if [ -f /research/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
@@ -73,6 +73,5 @@ for j in "${samples[@]}"; do
             fi
     fi
 done
-# run snp on the updated vcf
-#
-#
+
+# Run snp on the updated vcf
