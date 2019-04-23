@@ -78,7 +78,7 @@ done
 #     fi
 # done
 
-updated = ()
+updated=()
 # Run snp on the updated vcf
 for j in "${samples[@]}"; do
     # check to make sure the sample exists in the folder
