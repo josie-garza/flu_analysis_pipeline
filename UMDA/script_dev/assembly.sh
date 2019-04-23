@@ -3,6 +3,7 @@ set -e
 
 # Built by bowtie2-build
 REFERENCE="references/fluA_ny_h3n2.fna"
+echo "here"
 
 # Create the directory for the sorted bam files
 # directories=(04-vcf 05-html 06-annotated_vcf 07-genes)
@@ -24,6 +25,8 @@ for k in {1..237}; do  #237 is the number of samples
         done
         samples+=($c )
 done
+
+echo $samples
 
 # Created sorted bam files
 # for j in "${samples[@]}"; do
