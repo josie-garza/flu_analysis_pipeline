@@ -1,20 +1,25 @@
 
 # {seg: [(position, ALT)...]}
 
+files = [00001]
+ # 00002, 00011, 00012, 00014, 00015, 00016, 00018, 00019, 00021, 00022, 00024, 00025, 00028, 00029, 00030, 00031, 00038, 00039, 00040, 00042, 00043, 00045, 00047, 00052, 00056, 00059, 00060, 00061, 00062, 00064, 00067, 00068, 00069, 00070, 00071, 00072, 00073, 00074, 00076, 00077, 00078, 00079, 00080, 00081, 00083, 00084, 00085, 00087, 00088, 00089, 00093, 00094, 00095, 00096, 00097, 00098, 00099, 00100, 00101, 00102, 00107, 00108, 00113, 00114, 00115, 00117, 00212, 00213, 00214, 00215, 00216, 00217, 00218, 00220, 00221, 00222, 00224, 00225, 00227, 00228, 00229, 00230, 00231, 00232, 00233, 00234, 00235, 00236, 00237]
+
 def main():
-    summary = {}
-    f = open("00001.vcf", "r")
-    f1 = f.readlines()
-    for line in f1:
-        if line[0:2] == "NC":
-            info = line.split()
-            chromosome = info[0]
-            if chromosome in summary:
-                summary[chromosome].append((info[1], info[3]))
-            else:
-                summary[chromosome] = []
-                summary[chromosome].append((info[1], info[3]))
-    print(summary)
+    # for file in files:
+        print (files)
+    # summary = {}
+    # f = open("00001.vcf", "r")
+    # f1 = f.readlines()
+    # for line in f1:
+    #     if line[0:2] == "NC":
+    #         info = line.split()
+    #         chromosome = info[0]
+    #         if chromosome in summary:
+    #             summary[chromosome].append((info[1], info[3]))
+    #         else:
+    #             summary[chromosome] = []
+    #             summary[chromosome].append((info[1], info[3]))
+    # print(summary)
 
 if __name__== "__main__":
     main()
