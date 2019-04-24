@@ -6,6 +6,8 @@ Analysis scripts and tools for measuring flu diversity as it pertains to some UM
 * bowtie2
 * IGV
 * samtools
+* SnpEff
+* parsnp
 
 ### Working Directory Structure (see UMDA/script_dev)
 1. assembly.sh
@@ -21,5 +23,7 @@ Analysis scripts and tools for measuring flu diversity as it pertains to some UM
 
 ### Helpful Links
 https://github.com/alvaralmstedt/Tutorials/wiki/Bowtie2-mapping
+http://snpeff.sourceforge.net/protocol.html#intro
+https://harvest.readthedocs.io/en/latest/content/parsnp/quickstart.html
 
 *Rev. Sp 19*
