@@ -3,7 +3,7 @@ set -e
 
 # Built by bowtie2-build
 REFERENCE="references/fluA_ny_h3n2.fna"
-echo "here"
+echo "new assembly"
 
 # Create the directory for the sorted bam files
 # directories=(04-vcf 05-html 06-annotated_vcf 07-genes)
