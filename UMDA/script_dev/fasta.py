@@ -40,7 +40,7 @@ example = {'NC_007371': [('22', 'G'), ('99', 'A'), ('120', 'A'), ('144', 'C'), (
 def fasta(id):
     vcf = "04-vcf/" + id + ".vcf"
     summary = summarize(vcf)
-    name = id + ".txt"
+    name = id + ".fasta"
     fasta = open(name,"w+")
     ref = create_ref(id)
 
