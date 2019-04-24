@@ -2,7 +2,6 @@
 
 import sys
 id = sys.argv[1]
-summary = sys.argv[2]
 
 def create_ref(id):
     ref = {}
@@ -21,9 +20,26 @@ def create_ref(id):
             ref[chromosome] = [intro, info[10]]
     return (ref)
 
+def summarize(file):
+    summary = {}
+    f = open(file, "r")
+    f1 = f.readlines()
+    for line in f1:
+        if line[0:2] == "NC":
+            info = line.split()
+            chromosome = info[0]
+            if chromosome in summary:
+                summary[chromosome].append((info[1], info[3]))
+            else:
+                summary[chromosome] = []
+                summary[chromosome].append((info[1], info[3]))
+    return (summary)
+
 example = {'NC_007371': [('22', 'G'), ('99', 'A'), ('120', 'A'), ('144', 'C'), ('156', 'A'), ('177', 'T'), ('222', 'T'), ('324', 'A'), ('326', 'A'), ('333', 'A'), ('345', 'A'), ('363', 'G'), ('369', 'T'), ('396', 'A'), ('435', 'A'), ('465', 'C'), ('468', 'C'), ('489', 'A'), ('549', 'A'), ('579', 'A'), ('646', 'T'), ('660', 'T'), ('690', 'A'), ('790', 'A'), ('897', 'C'), ('915', 'T'), ('930', 'T'), ('1048', 'T'), ('1065', 'C'), ('1086', 'C'), ('1092', 'G'), ('1122', 'A'), ('1123', 'A'), ('1158', 'A'), ('1170', 'C'), ('1212', 'C'), ('1250', 'A'), ('1269', 'C'), ('1285', 'A'), ('1333', 'T'), ('1350', 'G'), ('1389', 'C'), ('1395', 'G'), ('1422', 'T'), ('1449', 'A'), ('1557', 'A'), ('1572', 'T'), ('1581', 'C'), ('1608', 'T'), ('1623', 'G'), ('1704', 'T'), ('1790', 'T'), ('1827', 'G'), ('1918', 'T'), ('1959', 'G'), ('2022', 'T'), ('2028', 'T'), ('2073', 'C'), ('2136', 'A')]}
 
-def fasta(id, summary):
+def fasta(id):
+    vcf = id + ".vcf"
+    summary = summarize(vcf)
     name = id + ".txt"
     fasta = open(name,"w+")
     ref = create_ref(id)
@@ -41,4 +57,4 @@ def fasta(id, summary):
             fasta.write("\n")
 
 if __name__== "__main__":
-    fasta(id, summary)
+    fasta(id)
