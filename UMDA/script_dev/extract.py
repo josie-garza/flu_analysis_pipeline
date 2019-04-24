@@ -1,5 +1,5 @@
-# {seg: [(position, ALT)...]}
 
+# {seg: [(position, ALT)...]}
 import sys
 
 file = sys.argv[1]
