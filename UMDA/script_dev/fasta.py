@@ -49,10 +49,14 @@ def fasta(id):
                 index = int(update[0])
                 sequence[index] = update[1]
             string = ''.join(sequence)
-            fasta.write(ref[segment][0] + string)
+            fasta.write(ref[segment][0])
+            fasta.write("\n")
+            fasta.write(string)
             fasta.write("\n")
         else:
-            fasta.write(ref[segment][0] + ref[segment][1])
+            fasta.write(ref[segment][0])
+            fasta.write("\n")
+            fasta.write(ref[segment][1])
             fasta.write("\n")
 
 if __name__== "__main__":
