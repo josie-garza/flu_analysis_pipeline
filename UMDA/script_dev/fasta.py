@@ -1,7 +1,15 @@
 # two args: sample id, summary info
+# each sample has variance, reference, and coverage
+# first go through coverage and see what needs to be placed in the fasta
+# originally just use reference for placing, but n where no coverage
+# next go through vcf and place the variants!
 
 import sys
 id = sys.argv[1]
+
+def coverage(id):
+    
+    return ""
 
 def create_ref(id):
     ref = {}
