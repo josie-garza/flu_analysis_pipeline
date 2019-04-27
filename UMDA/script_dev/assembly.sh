@@ -7,7 +7,8 @@ echo "new assembly"
 
 # Create the directory for the sorted bam files
 # directories=(04-vcf 05-html 06-annotated_vcf 07-genes)
-directories=(08-fasta)
+# directories=(08-fasta)
+directories=(09-coverage)
 for i in "${directories[@]}"; do
         # remove if it already exists
         if [ -d $i ]; then
@@ -83,8 +84,9 @@ done
 for j in "${samples[@]}"; do
     # check to make sure the sample exists in the folder
     if [ -f /rdf/tt40/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
-            python ./fasta.py $j
-            mv $j.fasta 08-fasta/$j.fasta
+            samtools mpileup 03-bowtie2/$j.sorted.bam -o 09-coverage/$j.coverage
+            # python ./fasta.py $j
+            # mv $j.fasta 08-fasta/$j.fasta
             # java -Xmx4g -jar ~/snpEff/snpEff.jar -v -stats 05-html/$j.html flu 04-vcf/$j.updated.vcf > 06-annotated_vcf/$j.ann.vcf
     fi
 done
