@@ -4,12 +4,51 @@
 # originally just use reference for placing, but n where no coverage
 # next go through vcf and place the variants!
 
+# check indexing!!
+
 import sys
 id = sys.argv[1]
 
 def coverage(id):
-    
-    return ""
+    # return the reference dictionary without the variance
+    file = "10-coverage/" + id + ".coverage"
+    f = open(file, "r")
+    lines = f.readlines()
+    segments = {}
+    for line in lines:
+        split = line.split()
+        if split[0] in segments.keys():
+            segments[split[0]].append((split[1], split[3]))
+        else:
+            segments[split[0]] = []
+            segments[split[0]].append((split[1], split[3]))
+
+    ref = create_ref(id)
+    for segment in ref.keys():
+        check = segment + ".1"
+        if check not in segments.keys():
+            num = len(ref[segment][1])
+            new_seg = ''
+            for i in range(0, num):
+                new_seg += 'N'
+            ref[segment][1] = new_seg
+
+    for segment in segments.keys():
+        ref_seg = ref[segment[0:9]][1]
+        new_seg = ''
+        for i in range(0, len(ref_seg)):
+            new_seg += 'N'
+
+        ref_list = list(ref_seg)
+        new_list = list(new_seg)
+
+        for pair in segments[segment]:
+            if int(pair[1]) > 1:
+                new_list[int(pair[0])] = ref_list[int(pair[0])]
+
+        string = ''.join(new_list)
+        ref[segment[0:9]][1] = string
+    return (ref)
 
 def create_ref(id):
     ref = {}
@@ -48,7 +87,7 @@ def fasta(id):
     summary = summarize(vcf)
     name = id + ".fasta"
     fasta = open(name,"w+")
-    ref = create_ref(id)
+    ref = coverage(id)
 
     for segment in ref.keys():
         if segment in summary.keys():
