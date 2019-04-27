@@ -27,6 +27,7 @@ def coverage(id):
     for segment in ref.keys():
         check = segment + ".1"
         if check not in segments.keys():
+            print (check)
             num = len(ref[segment][1])
             new_seg = ''
             for i in range(0, num):
@@ -44,6 +45,8 @@ def coverage(id):
 
         for pair in segments[segment]:
             if int(pair[1]) > 1:
+                print (pair)
+                print (segment)
                 new_list[int(pair[0])] = ref_list[int(pair[0])]
 
         string = ''.join(new_list)
