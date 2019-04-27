@@ -45,9 +45,7 @@ def coverage(id):
 
         for pair in segments[segment]:
             if int(pair[1]) > 1:
-                print (pair)
-                print (segment)
-                new_list[int(pair[0])] = ref_list[int(pair[0])]
+                new_list[int(pair[0])-1] = ref_list[int(pair[0])-1]
 
         string = ''.join(new_list)
         ref[segment[0:9]][1] = string
