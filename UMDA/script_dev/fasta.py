@@ -54,13 +54,15 @@ def coverage(id):
     return check_counts(ref)
 
 def check_counts(ref):
+    remove = False
     for segment in ref.keys():
         count = 0
         for char in ref[segment][1]:
             if char=='N':
                 count+=1
         if count > counts[segment]*0.5:
-            return {}
+            remove = True
+    print (remove)
     return ref
 
 def create_ref(id):
@@ -97,8 +99,7 @@ def summarize(file):
 
 def fasta(id):
     ref = coverage(id)
-    if ref == {}:
-        return
+    print (id)
     vcf = "04-vcf/" + id + ".vcf"
     summary = summarize(vcf)
     name = id + ".fasta"
