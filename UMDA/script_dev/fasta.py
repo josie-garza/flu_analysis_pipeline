@@ -51,7 +51,10 @@ def coverage(id):
 
         string = ''.join(new_list)
         ref[segment[0:9]][1] = string
-    return check_counts(ref)
+    if not check_counts(ref):
+        return ref
+    else:
+        return {}
 
 def check_counts(ref):
     remove = False
@@ -63,7 +66,7 @@ def check_counts(ref):
         if count > counts[segment]*0.5:
             remove = True
     print (remove)
-    return ref
+    return remove
 
 def create_ref(id):
     ref = {}
@@ -100,6 +103,9 @@ def summarize(file):
 def fasta(id):
     ref = coverage(id)
     print (id)
+    if ref == {}:
+        print ("removing...")
+        return
     vcf = "04-vcf/" + id + ".vcf"
     summary = summarize(vcf)
     name = id + ".fasta"
