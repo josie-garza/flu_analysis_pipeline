@@ -6,6 +6,9 @@
 
 # check indexing!!
 
+counts = {'NC_007373': 2341, 'NC_007372': 2341, 'NC_007371': 2233,
+    'NC_007366': 1762, 'NC_007369': 1566, 'NC_007368': 1467, 'NC_007367': 1027, 'NC_007370': 890}
+
 import sys
 id = sys.argv[1]
 
@@ -48,7 +51,17 @@ def coverage(id):
 
         string = ''.join(new_list)
         ref[segment[0:9]][1] = string
-    return (ref)
+    return check_counts(ref)
+
+def check_counts(ref):
+    for segment in ref.keys():
+        count = 0
+        for char in ref[segment][1]:
+            if char=='N':
+                count+=1
+        if count > counts[segment]*0.5:
+            return {}
+    return ref
 
 def create_ref(id):
     ref = {}
@@ -83,11 +96,13 @@ def summarize(file):
     return (summary)
 
 def fasta(id):
+    ref = coverage(id)
+    if ref == {}:
+        return
     vcf = "04-vcf/" + id + ".vcf"
     summary = summarize(vcf)
     name = id + ".fasta"
     fasta = open(name,"w+")
-    ref = coverage(id)
 
     for segment in ref.keys():
         if segment in summary.keys():
