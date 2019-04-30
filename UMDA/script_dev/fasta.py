@@ -12,6 +12,20 @@ counts = {'NC_007373': 2341, 'NC_007372': 2341, 'NC_007371': 2233,
 import sys
 id = sys.argv[1]
 
+def creat_dict():
+    names = {}
+    f = open("metadata.txt", "r")
+    lines = f.readlines()
+    for ind in range(1, len(lines)):
+        split = lines[ind].split()
+        seg = split[0][11:]
+        data = split[4]
+        split2 = data.split('/')
+        for item in split2:
+            if "_" in item:
+                names[seg] = item
+    return names
+
 def coverage(id):
     # return the reference dictionary without the variance
     file = "10-coverage/" + id + ".coverage"
@@ -65,7 +79,7 @@ def check_counts(ref):
                 count+=1
         if count > counts[segment]*0.5:
             remove = True
-    print (remove)
+    # print (remove)
     return remove
 
 def create_ref(id):
@@ -101,14 +115,20 @@ def summarize(file):
     return (summary)
 
 def fasta(id):
+    names = creat_dict()
     ref = coverage(id)
-    print (id)
+    # print (id)
     if ref == {}:
         print ("removing...")
         return
+    if id in names.keys():
+        new_name = names[id]
+    else:
+        new_name = id
+    # print (new_name)
     vcf = "04-vcf/" + id + ".vcf"
     summary = summarize(vcf)
-    name = id + ".fasta"
+    name = new_name + ".fasta"
     fasta = open(name,"w+")
 
     for segment in ref.keys():
