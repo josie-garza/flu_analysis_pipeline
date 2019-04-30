@@ -19,7 +19,9 @@ Analysis scripts and tools for measuring flu diversity as it pertains to some UM
 6. 06-annotated_vcf
 7. 07-genes
 8. 08-fasta
-9. GenBank
+9. 09-parsnp
+10. 10-coverage
+11. GenBank
 
 ### Helpful Links
 https://github.com/alvaralmstedt/Tutorials/wiki/Bowtie2-mapping
