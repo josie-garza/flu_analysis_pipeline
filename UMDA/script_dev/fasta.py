@@ -65,10 +65,11 @@ def coverage(id):
 
         string = ''.join(new_list)
         ref[segment[0:9]][1] = string
-    if not check_counts(ref):
-        return ref
-    else:
-        return {}
+    # if not check_counts(ref):
+    #     return ref
+    # else:
+    #     return {}
+    return ref
 
 def check_counts(ref):
     remove = False
@@ -118,9 +119,9 @@ def fasta(id):
     names = creat_dict()
     ref = coverage(id)
     # print (id)
-    if ref == {}:
-        print ("removing...")
-        return
+    # if ref == {}:
+    #     print ("removing...")
+    #     return
     if id in names.keys():
         new_name = names[id]
     else:

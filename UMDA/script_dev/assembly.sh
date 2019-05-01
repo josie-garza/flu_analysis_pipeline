@@ -86,9 +86,6 @@ for j in "${samples[@]}"; do
     if [ -f /rdf/tt40/emit/emit/00-reads/split_reads/UMDA_$j.1.fastq ]; then
             # samtools mpileup 03-bowtie2/$j.sorted.bam -o 09-coverage/$j.coverage
             python ./fasta.py $j
-            if [ -f /$j.fasta ]; then
-                    mv $j.fasta 08-fasta/$j.fasta
-            fi
             # java -Xmx4g -jar ~/snpEff/snpEff.jar -v -stats 05-html/$j.html flu 04-vcf/$j.updated.vcf > 06-annotated_vcf/$j.ann.vcf
     fi
 done
